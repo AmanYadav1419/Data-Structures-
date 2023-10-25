@@ -35,4 +35,4 @@ else:
     print("Usage: quickmath.py <add|mul|div|sub|avg> <num01> <num02> [num03..num99]")
     exit(1)
 
-print(str(result))
+print(result)

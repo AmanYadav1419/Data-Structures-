@@ -10,15 +10,15 @@ class Node:
 # of the tree so as to store the node
 # values in 'arr' in sorted order
 def inorderTraversal(root, arr):
-    if root == None:
+    if root is None:
         return
- 
+
     # first recur on left subtree
     inorderTraversal(root.left, arr)
- 
+
     # then copy the data of the node
     arr.append(root.data)
- 
+
     # now recur for right subtree
     inorderTraversal(root.right, arr)
      
@@ -26,17 +26,17 @@ def inorderTraversal(root, arr):
 # BST to MIN HEAP performs preorder
 # traversal of the tree
 def BSTToMinHeap(root, arr, i):
-    if root == None:
+    if root is None:
         return
- 
+
     # first copy data at index 'i' of
     # 'arr' to the node
     i[0] += 1
     root.data = arr[i[0]]
- 
+
     # then recur on left subtree
     BSTToMinHeap(root.left, arr, i)
- 
+
     # now recur on right subtree
     BSTToMinHeap(root.right, arr, i)
  
@@ -58,15 +58,15 @@ def convertToMinHeapUtil(root):
 # function for the preorder traversal
 # of the tree
 def preorderTraversal(root):
-    if root == None:
+    if root is None:
         return
- 
+
     # first print the root's data
     print(root.data, end = " ")
- 
+
     # then recur on left subtree
     preorderTraversal(root.left)
- 
+
     # now recur on right subtree
     preorderTraversal(root.right)
      

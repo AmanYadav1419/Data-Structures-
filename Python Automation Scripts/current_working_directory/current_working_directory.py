@@ -42,22 +42,18 @@ else:
     exit(1)
 
 # If file_name is setup then get abspath otherwise get cwd
-if len(file_name) >= 1:
-    full_path = os.path.abspath(file_name)
-else:
-    full_path = os.getcwd()
-
+full_path = os.path.abspath(file_name) if len(file_name) >= 1 else os.getcwd()
 # If clipboard is setup add it to clipboard on Windows or Mac
 if copy_to_clipboard == True:
     whatos = platform.system()
     if whatos == "Darwin":
         subprocess.run("pbcopy", universal_newlines=True, input=full_path)
-        output = full_path + " (copied to clipboard)"
+        output = f"{full_path} (copied to clipboard)"
     elif whatos == "Windows":
         subprocess.run("clip", universal_newlines=True, input=full_path)
-        output = full_path + " (copied to clipboard)"
+        output = f"{full_path} (copied to clipboard)"
     else:
-        output = full_path + " (clipboard not supported)"
+        output = f"{full_path} (clipboard not supported)"
 else:
     output = full_path
 

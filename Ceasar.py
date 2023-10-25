@@ -20,4 +20,4 @@ def encrypt(text, s):
 # check the above function
 text = input("Enter Text ")
 s = int(input("Enter shift Size "))
-print("Cipher: " + encrypt(text, s))
+print(f"Cipher: {encrypt(text, s)}")

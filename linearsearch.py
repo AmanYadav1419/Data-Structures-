@@ -1,16 +1,12 @@
 
 def search(arr,n):
-    for i in range(num):
-        if n==arr[i]:
-            return i+1
-
-    return -1
+    return next((i+1 for i in range(num) if n==arr[i]), -1)
             
             
 arr = []
 num = int(input("Enter the length of array:"))
 print("Enter the value of integers for array:")
-for i in range(num):
+for _ in range(num):
     a = int(input())
     arr.append(a)
 
