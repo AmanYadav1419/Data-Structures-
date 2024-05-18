@@ -23,15 +23,14 @@ if __name__ == "__main__":
         myHtmlData = getData('https://www.mohfw.gov.in/')
 
         soup = BeautifulSoup(myHtmlData, 'html.parser')
-        # print(soup.prettify())
-        myDataStr = ""
-        for tr in soup.find_all('tbody')[1].find_all('tr'):
-            myDataStr += tr.get_text()
+        myDataStr = "".join(
+            tr.get_text() for tr in soup.find_all('tbody')[1].find_all('tr')
+        )
         myDataStr = myDataStr[1:]
         itemList = myDataStr.split("\n\n")
 
         states = ['Chandigarh', 'Telengana', 'Uttar Pradesh']
-        for item in itemList[0:22]:
+        for item in itemList[:22]:
             dataList = item.split('\n')
             if dataList[1] in states: 
                 nTitle = 'Cases of Covid-19'

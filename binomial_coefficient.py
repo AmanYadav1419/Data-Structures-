@@ -3,16 +3,15 @@
 # Returns value of Binomial Coefficient 
 # C(n, k) 
 def binomialCoefficient(n, k): 
-    # since C(n, k) = C(n, n - k) 
-    if(k > n - k): 
-        k = n - k 
+    # since C(n, k) = C(n, n - k)
+    k = min(k, n - k)
     # initialize result 
     res = 1
     # Calculate value of  
     # [n * (n-1) *---* (n-k + 1)] / [k * (k-1) *----* 1] 
     for i in range(k): 
         res = res * (n - i) 
-        res = res / (i + 1) 
+        res = res / (i + 1)
     return res 
 
 # Driver program to test above function  

@@ -7,8 +7,7 @@ class Graph():
 
 	def __init__(self, vertices):
 		self.V = vertices
-		self.graph = [[0 for column in range(vertices)]
-					for row in range(vertices)]
+		self.graph = [[0 for _ in range(vertices)] for _ in range(vertices)]
 
 	# A utility function to print the constructed MST stored in parent[]
 	def printMST(self, parent):
@@ -44,8 +43,7 @@ class Graph():
 
 		parent[0] = -1 # First node is always the root of
 
-		for cout in range(self.V):
-
+		for _ in range(self.V):
 			# Pick the minimum distance vertex from
 			# the set of vertices not yet processed.
 			# u is always equal to src in first iteration

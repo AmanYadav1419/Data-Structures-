@@ -59,7 +59,7 @@ class Queue:
 
     def empty(self) -> bool:
         """checks if queue is empty"""
-        return True if self.head is None else False
+        return self.head is None
 
     def __str__(self) -> str:
         """string representation of a queue"""

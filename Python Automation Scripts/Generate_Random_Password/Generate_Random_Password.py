@@ -46,12 +46,7 @@ def _generate_random_number_for_each_sequence(total, sequence_number):
 
 def _is_repeating(password):
     """ Check if there is any 2 characters repeating consecutively """
-    n = 1
-    while n < len(password):
-        if password[n] == password[n-1]:
-            return True
-        n += 1
-    return False
+    return any(password[n] == password[n-1] for n in range(1, len(password)))
 
 if __name__ == '__main__':
     print generate_random_password(random.randint(6, 30), SEQUENCE)

@@ -9,8 +9,7 @@ class Graph():
 
 	def __init__(self, vertices):
 		self.V = vertices
-		self.graph = [[0 for column in range(vertices)]
-					for row in range(vertices)]
+		self.graph = [[0 for _ in range(vertices)] for _ in range(vertices)]
 
 	def printSolution(self, dist):
 		print "Vertex \tDistance from Source"
@@ -43,8 +42,7 @@ class Graph():
 		dist[src] = 0
 		sptSet = [False] * self.V
 
-		for cout in range(self.V):
-
+		for _ in range(self.V):
 			# Pick the minimum distance vertex from
 			# the set of vertices not yet processed.
 			# x is always equal to src in first iteration
@@ -60,7 +58,7 @@ class Graph():
 			# the vertex in not in the shortest path tree
 			for y in range(self.V):
 				if self.graph[x][y] > 0 and sptSet[y] == False and \
-				dist[y] > dist[x] + self.graph[x][y]:
+					dist[y] > dist[x] + self.graph[x][y]:
 						dist[y] = dist[x] + self.graph[x][y]
 
 		self.printSolution(dist)
